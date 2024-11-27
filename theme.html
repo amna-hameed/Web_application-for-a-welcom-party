@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Themes</title>
+  <style>
+    /* Some basic styling for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+    .theme-button {
+      border: none;
+      padding: 0;
+      background: none;
+      cursor: pointer;
+      outline: none;
+    }
+    .theme-button img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .top-left-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+        }
+  </style>
+</head>
+<body>
+  <button class="top-left-button" onclick="goToDashboard()">Dashboard</button>
+  <div class="container" action="/theme" method="POST" onsubmit="return validateForm()">
+    <!-- Example theme buttons -->
+    <button class="theme-button" onclick="selectTheme('theme1.jpg')">
+      <img src="https://i.pinimg.com/originals/30/12/15/301215c246bf9197c455ffe8e4f44d57.jpg" alt="Theme 1">
+    </button>
+    <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+      <img src="https://m.media-amazon.com/images/I/815eA9XrgHL.jpg" alt="Theme 2">
+    </button>
+
+
+
+    <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUYAA0FBrmrJNfOmYMwRvPADAuES3ZzsXUQ&usqp=CAU" alt="Theme 2">
+      </button>
+      <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+        <img src="https://b6d9e0f0.flyingcdn.com/wp-content/uploads/farewell-invitation-cards.jpg" alt="Theme 2">
+      </button>
+      <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2dtho_Zw3jp8_OdrK9KdEpW4rmDKaVYquvw&usqp=CAU" alt="Theme 2">
+      </button>
+      <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH9qBzcKgmIbRe66jweBF9ezdhx7AL58sQ-A&usqp=CAU" alt="Theme 2">
+      </button>
+      <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_eIzjIK90dCaKelIDiqjchLvM4D5rstuCmw&usqp=CAU" alt="Theme 2">
+      </button>
+      <button class="theme-button" onclick="selectTheme('theme2.jpg')">
+        <img src="https://blog.venuelook.com/wp-content/uploads/2022/07/prom-640x427.jpg" alt="Theme 2">
+      </button>
+  </div>
+
+  <script>
+    function selectTheme(imagePath) {
+      
+      window.location.href = '/done';
+    }
+    function goToDashboard() {
+            // Redirect to the dashboard page
+            window.location.href = "/dashboard"; // Replace "/dashboard.html" with your actual dashboard URL
+        }
+  </script>
+</body>
+</html>

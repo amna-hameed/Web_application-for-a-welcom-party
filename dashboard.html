@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-image: url('https://i.pinimg.com/originals/f4/a4/15/f4a415b1770d7bad4193cd84d885d259.jpg');
+            /* Add your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        #dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+            /* Ensure dashboard content is above the sidebar */
+            color: black;
+            /* Text color for visibility */
+            background: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #141414;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <!-- Add sidebar content or links here -->
+    </div>
+
+    <div id="dashboard-container">
+        <h1>Welcome to the Dashboard!</h1>
+        <button onclick="goTosignupTPage()">Sign up as a Teacher</button>
+        <button onclick="goTosignupSPage()">Sign up as a Student</button>
+        <button onclick="goToLoginTPage()">Log in as a Teacher</button>
+        <button onclick="goToLoginSPage()">Log in as a Student</button>
+        <button onclick="goToorganizerPage()">Log in as an Organizer</button>
+        <button onclick="goToTeamPage()">Log in as a Team Member</button>
+        <button onclick="goToReportPage()">Reports</button>
+    </div>
+
+    <script>
+        function goToLoginTPage() {
+            window.location.href = '/loginteacher';
+        }
+
+        function goToLoginSPage() {
+            window.location.href = '/loginstudent';
+        }
+
+        function goTosignupTPage() {
+            window.location.href = '/signupteacher';
+        }
+
+        function goTosignupSPage() {
+            window.location.href = '/signupstudent';
+        }
+
+        function goToorganizerPage() {
+            window.location.href = '/loginorganizer';
+        }
+
+        function goToTeamPage() {
+            window.location.href = '/loginteam';
+        }
+        function goToReportPage() {
+            window.location.href = '/report';
+        }
+    </script>
+</body>
+
+</html>

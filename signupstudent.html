@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        .top-left-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="top-left-button" onclick="goToDashboard()">Dashboard</button>
+    <h1>Student Sign Up</h1>
+    <p>Fill out the form below to create a student account.</p>
+
+    <form action="/signupstudent" method="post" onsubmit="return validateForm()">
+        <label for="StudentID">Student ID</label>
+        <input type="text" id="StudentID" name="StudentID" required>
+
+        <label for="LastName">Last Name</label>
+        <input type="text" id="LastName" name="LastName" required>
+
+        <label for="FirstName">First Name</label>
+        <input type="text" id="FirstName" name="FirstName" required>
+
+        <label for="Password">Password</label>
+        <input type="password" id="Password" name="Password" required>
+
+        <label for="Username">Username</label>
+        <input type="text" id="Username" name="Username" required>
+
+        <label for="DietaryPreferences">Dietary Preferences</label>
+        <input type="text" id="DietaryPreferences" name="DietaryPreferences" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // You can add validation logic here if needed
+            return true; // For now, returning true to allow form submission
+        }
+
+        function goToDashboard() {
+            // Redirect to the dashboard page
+            window.location.href = "/dashboard"; // Replace "/dashboard.html" with your actual dashboard URL
+        }
+    </script>
+</body>
+
+</html>

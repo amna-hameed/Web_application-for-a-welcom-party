@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <script>
+        function query1() {
+            // Execute SQL query for the first report
+            let sql = 'SELECT Student.*, FamilyMember.* FROM Student LEFT JOIN FamilyMember ON Student.StudentID = FamilyMember.StudentID';
+            executeQuery(sql);
+        }
+
+        function query2() {
+            // Execute SQL query for the second report
+            let sql = 'SELECT Student.UserName, COUNT(PerformanceProposal.ProposeID) AS ProposalCount FROM Student LEFT JOIN PerformanceProposal ON Student.StudentID = PerformanceProposal.StudentID GROUP BY Student.UserName';
+            executeQuery(sql);
+        }
+
+        function query3() {
+            // Execute SQL query for the third report
+            let sql = 'SELECT AVG(Duration) AS AverageDuration FROM PerformanceProposal';
+            executeQuery(sql);
+        }
+
+        function query4() {
+            // Execute SQL query for the fourth report
+            let sql = 'SELECT Teacher.UserName, COUNT(Invitation.InvitationID) AS InvitationCount FROM Teacher LEFT JOIN Invitation ON Teacher.TeacherID = Invitation.TeacherID GROUP BY Teacher.UserName';
+            executeQuery(sql);
+        }
+
+        function query5() {
+            // Execute SQL query for the fifth report
+            let sql = 'SELECT Category, AVG(AmountSpent) AS AverageSpent FROM Budget GROUP BY Category';
+            executeQuery(sql);
+        }
+
+        function query6() {
+            // Execute SQL query for the sixth report
+            let sql = 'SELECT Student.UserName, COUNT(Task.TaskID) AS CompletedTasks FROM Student LEFT JOIN Task ON Student.StudentID = Task.StudentID AND Task.Status = "Complete" GROUP BY Student.UserName';
+            executeQuery(sql);
+        }
+
+        function query7() {
+            // Execute SQL query for the seventh report
+            let sql = 'SELECT Organizer.UserName, COUNT(Announcement.AnnouncementID) AS AnnouncementCount FROM Organizer LEFT JOIN Announcement ON Organizer.OrganizerID = Announcement.OrganizerID GROUP BY Organizer.UserName';
+            executeQuery(sql);
+        }
+
+        function executeQuery(sql) {
+            // Perform an action with the SQL query result, such as displaying it in the console
+            console.log("Executing SQL query:", sql);
+            // You would need to implement database querying and handling here
+        }
+
+        function goToDashboard() {
+            // Redirect to the dashboard page
+            window.location.href = "/dashboard"; // Replace "/dashboard.html" with your actual dashboard URL
+        }
+    </script>
+</head>
+<body>
+  <button class="top-left-button" onclick="goToDashboard()">Dashboard</button>
+    <h1>Report</h1>
+    <button onclick="query1()">Query 1</button>
+    <button onclick="query2()">Query 2</button>
+    <button onclick="query3()">Query 3</button>
+    <button onclick="query4()">Query 4</button>
+    <button onclick="query5()">Query 5</button>
+    <button onclick="query6()">Query 6</button>
+    <button onclick="query7()">Query 7</button>
+</body>
+</html>

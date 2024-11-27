@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Boxes</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      /* Add background image */
+      background-image: url('https://static01.nyt.com/images/2022/03/24/fashion/24balloons-1/24balloons-1-facebookJumbo.jpg?year=2022&h=550&w=1050&s=b9b7426c76918f583880e90d3e807e7c5e13ce30b36328b18174c033f4099b7f&k=ZQJBKqZ0VN');
+      /* You can set additional background properties like size, position, repeat, etc. */
+      background-size: cover; /* Adjusts the size of the background image */
+      background-position: center; /* Positions the background image */
+    }
+    .button-container {
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      padding: 20px 40px;
+      margin: 10px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      background-color: #333; /* Darker background color */
+      font-size: 18px;
+      text-decoration: none;
+      color: #fff; /* White text color */
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #555; /* Darker background color on hover */
+    }
+    .top-left-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+        }
+  </style>
+</head>
+<body>
+  <button class="top-left-button" onclick="goToDashboard()">Dashboard</button>
+  <div class="button-container">
+    <a href="/dinnerplan" class="button">Dinner Menu Planning</a>
+    <a href="/perproposal" class="button">Stage Performance Proposals</a>
+    <a href="/theme" class="button">Decoration Themes</a>
+    <a href="/invitation" class="button">Invitation design</a>
+  </div>
+  <script>
+   
+    function goToDashboard() {
+            // Redirect to the dashboard page
+            window.location.href = "/dashboard"; // Replace "/dashboard.html" with your actual dashboard URL
+        }
+  </script>
+</body>
+</html>
